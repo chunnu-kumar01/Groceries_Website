@@ -1,0 +1,533 @@
+/* Universal selector */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f7f5;
+
+}
+
+/* Navbar */
+
+.navbar {
+    display: flex;
+    border-bottom: 2px solid darkgreen;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+    height: 70px;
+    width: 100%;
+    background: #ffffff;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+
+    /* box-shadow: 0 8px 15px rgb(250, 193, 193); */
+
+
+}
+
+
+.navbar h1 {
+    color: darkgreen;
+    margin-left: 20px;
+
+}
+
+.navbar span {
+    color: rgb(238, 238, 18);
+
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    list-style: none;
+    gap: 10px;
+
+}
+
+.navbar li {
+    padding: 10px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #060000;
+    font-size: 16px;
+    font-weight: bold;
+
+}
+
+/* Search */
+
+.search-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 450px;
+    height: 100%;
+    flex: 1;
+    border: 2px solid darkgreen;
+    border-radius: 10px;
+    background: white;
+}
+
+
+
+.search-box input {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 18px;
+}
+
+
+.navbar button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: darkgreen;
+    color: #FFFFFF;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.search-box button {
+    border: none;
+    cursor: pointer;
+    color: white;
+    background: #ffffff;
+    font-size: 18px;
+    margin-left: 2px;
+    
+}
+
+.navbar button:hover {
+    background: rgb(0, 151, 0);
+
+} 
+
+/* Hero section */
+.hero {
+    background:
+        linear-gradient(darkgreen, darkgreen) padding-box,
+        linear-gradient(to right, #7ef089, #299602) border-box;
+
+    border-radius: 15px;
+    width: auto;
+    height: 320px;
+    padding: 40px 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 100px 40px 25px 40px;
+
+}
+
+.shop h1 {
+    font-size: 40px;
+    margin-bottom: 15px;
+    color: #FFFFFF;
+
+}
+
+.shop p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #FFFFFF;
+}
+
+.shop button {
+    padding: 10px 20px;
+    border-radius: 5px;
+    background: #023b0a;
+    border: none;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    /* box-shadow: 0 8px 20px rgb(10, 128, 61); */
+}
+
+.shop button:hover {
+    background-color: rgb(0, 185, 50);
+}
+
+.cart-image {
+    font-size: 120px;
+
+}
+
+
+
+/*  Category */
+.catgory {
+    background: #ffffff;
+    margin-top: 10px;
+    padding: 20px 40px;
+    position: sticky;
+    top: 70px;
+    z-index: 1;
+    /* border: 2px solid black; */
+}
+
+.category-row {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.category-row::-webkit-scrollbar {
+    display: none;
+}
+
+.catgory h2 {
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: darkgreen;
+}
+
+
+.item-con {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80px;
+    margin-right: 20px;
+    margin-bottom: 15px;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+
+.item {
+    height: 80px;
+    width: 80px;
+    background: rgb(232, 246, 233);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    /* box-shadow: 0 8px 15px rgb(205, 97, 97); */
+
+}
+
+.item span {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.item-con p {
+    font-size: 16px;
+    margin-top: 6px;
+    font-weight: bold;
+    padding: 0;
+    white-space: nowrap;
+}
+
+/* product  */
+
+.container {
+    margin-bottom: 30px;
+
+}
+
+.container h2 {
+    margin: 20px 0 25px 30px;
+    font-size: 26px;
+    font-weight: bold;
+    color: darkgreen;
+
+}
+
+.product {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 0px 20px;
+
+}
+
+
+.product-card {
+    background: #ffffff;
+    padding: 20px 25px;
+    border: 1px solid #e9f2ec;
+    border-radius: 20px;
+    box-shadow: 0 6px 24px rgba(20, 70, 45, 0.08);
+    cursor: pointer;
+
+
+}
+
+.image {
+    width: 100%;
+    height: 210px;
+    border-radius: 15px;
+    background: #f1f7f2;
+    position: relative;
+
+
+}
+
+.image span {
+    position: absolute;
+    background-color: rgb(243, 109, 109);
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin: 10px 10px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+
+}
+
+.image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+}
+
+.product-card .btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 12px;
+    background: rgb(15, 123, 15);
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: darkgreen;
+}
+
+.product-card h3 {
+
+    padding-top: 15px;
+    font-weight: bold;
+    color: darkgreen;
+}
+.product-card p{
+    font-weight: bold;
+    font-size: 16px;
+    color: black;
+}
+
+.footer {
+    background-color: #ffffff;
+    color: darkgreen;
+    padding: 40px 20px 20px 20px;
+    font-family: sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.footer-table {
+    margin-bottom: 20px;
+    min-width: 150px;
+}
+
+.footer-table h3 {
+    color: black;
+    margin-bottom: 15px;
+    font-size: 25px;
+    font-weight: bolder;
+}
+
+.footer-table ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-table li {
+    margin-bottom: 10px;
+}
+
+.footer-table a {
+    color: darkgreen;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.bottom {
+    flex-basis: 100%;
+    border-top: 1px solid darkgreen;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0px 10px;
+
+}
+
+.footer-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 17px;
+    color: darkgreen;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.navbar p {
+    color: black;
+    font-weight: bold;
+    padding: 5px;
+
+}
+
+
+
+.icons {
+    margin-top: 3px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icons a {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #334155;
+    border-radius: 50%;
+    background-color: #1d2532;
+    color: #e3eaf3;
+    font-size: 18px;
+    margin: 10px;
+    text-decoration: none;
+}
+
+/* Responsive */
+
+@media (max-width: 550px) {
+    .navbar {
+        display: grid;
+        grid-template-areas: "logo navItems" "SearchBar SearchBar";
+        height: 150px;
+
+    }
+
+    .navbar h1 {
+        grid-area: logo;
+        font-size: 25px;
+        margin: 0;
+        padding: 0;
+
+    }
+
+    .search-box {
+        grid-area: SearchBar;
+    }
+
+    .navbar ul {
+        grid-area: navItems;
+        margin: 0px;
+        padding: 0px;
+
+    }
+
+
+    .navbar a {
+        font-size: 18px;
+
+    }
+
+    .shop button {
+        padding: 10px 15px;
+        font-size: 14px;
+    }
+
+    .shop h1 {
+        font-size: 24px;
+    }
+
+    .shop p {
+        font-size: 15px;
+    }
+
+    .hero {
+        width: 100wh;
+        margin: 180px 20px 20px 20px ;
+        padding: 20px 20px;
+    }
+
+
+    .catgory {
+        position: sticky;
+        top: 150px;
+        z-index: 1;
+    }
+
+
+    .product {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .footer {
+        padding: 25px 15px 15px;
+        gap: 10px;
+    }
+
+    .footer-table {
+        flex: 1 100%;
+        margin: 0px 0px 15px 30px;
+    }
+
+    .footer-table h3 {
+        font-size: 18px;
+        margin-bottom: 10px;
+    }
+
+    .footer-table li {
+        margin-bottom: 8px;
+    }
+
+    .footer-table a {
+        font-size: 14px;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 5px 0;
+        gap: 10px;
+    }
+
+    .footer-bottom {
+        font-size: 14px;
+        width: 100%;
+    }
+}
