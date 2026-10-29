@@ -265,7 +265,7 @@ body {
 
 .product {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 40px;
     padding: 0px 20px;
     margin: 15px;
@@ -316,7 +316,7 @@ body {
 
 .product-card .btn {
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin-top: 15px;
     border: none;
     border-radius: 12px;
