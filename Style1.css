@@ -145,23 +145,23 @@ input:focus-visible {
     color: var(--primary);
     background: var(--primary-light);
 }
-/* 
-UPDATED: Consistent button styling in the navigation
+
+/* UPDATED: Consistent button styling in the navigation */
 .navbar button {
     padding: 10px 15px;
     border-radius: 8px;
     color: #ffffff;
-    /* background: var(--primary); */
-    /* border: none;
+    background: var(--primary);
+     border: none;
     font-size: 14px;
     font-weight: 700;
     cursor: pointer;
-} */ 
+} 
 
 /* .navbar button:hover {
     background: var(--primary-dark);
     box-shadow: 0 5px 12px rgba(23, 107, 56, 0.18);
-} */
+}
 
 
 /* =========================================================
@@ -777,77 +777,184 @@ UPDATED: Consistent button styling in the navigation
 }
 
 
+
+
 /* =========================================================
    UPDATED: LARGE TABLETS AND SMALL LAPTOPS
    Purpose: Display four or three product columns where
    five columns would otherwise become too narrow.
    ========================================================= */
 
-@media (max-width: 1200px) {
-    .navbar {
-        gap: 12px;
-        padding-right: 3%;
-        padding-left: 3%;
-    }
+/* =========================================
+   PREMIUM RESPONSIVE GROCERY WEBSITE
+   Append this at the END of your CSS file
+========================================= *
 
-    .navbar h1 {
-        font-size: 23px;
-    }
-
-    .navbar ul {
-        gap: 2px;
-    }
-
-    .navbar li {
-        padding: 3px;
-    }
-
-    .navbar a {
-        padding: 8px;
-        font-size: 13px;
-    }
-
-    .search-box {
-        max-width: 320px;
-    }
-
-    .product {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
-        gap: 20px;
-        padding-right: 25px;
-        padding-left: 25px;
-    }
-
-    .container h2 {
-        padding-right: 25px;
-        padding-left: 25px;
-    }
-
-    .image {
-        height: 145px;
-    }
+/* NAVBAR */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 12px clamp(14px, 4vw, 55px);
+    min-height: 72px;
+    background: rgba(255, 255, 255, 0.97);
+    backdrop-filter: blur(14px);
 }
 
+.navbar h1 {
+    flex-shrink: 0;
+}
 
-/* =========================================================
-   UPDATED: TABLETS
-   Purpose: Improve navigation wrapping, hero spacing,
-   category layout, and product cards on medium screens.
-   ========================================================= */
+.navbar ul {
+    flex-wrap: nowrap;
+    gap: 4px;
+}
 
-@media (max-width: 900px) {
+.navbar li {
+    padding: 0;
+}
+
+.navbar a {
+    white-space: nowrap;
+}
+
+.search-box {
+    flex: 1 1 220px;
+    max-width: 390px;
+    min-width: 0;
+}
+
+/* HERO BANNER */
+.hero {
+    width: min( calc(100% - 40px), 1450px );
+    margin: 100px auto 28px;
+    padding: clamp(24px, 5vw, 60px);
+    min-height: 300px;
+    border-radius: 24px;
+}
+
+.shop {
+    min-width: 0;
+}
+
+.shop h1 {
+    max-width: 620px;
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.15;
+}
+
+.shop p {
+    max-width: 560px;
+}
+
+.shop button,
+.product-card .btn {
+    min-height: 44px;
+    cursor: pointer;
+    touch-action: manipulation;
+}
+
+.cart-image {
+    font-size: clamp(65px, 10vw, 135px);
+}
+
+/* CATEGORIES */
+.catgory {
+    top: 70px;
+    margin-top: 0;
+}
+
+.category-row {
+    padding-right: 20px;
+    padding-left: 20px;
+    overscroll-behavior-x: contain;
+}
+
+.item-con {
+    flex-shrink: 0;
+}
+
+/* PRODUCT SECTION */
+.container {
+    width: 100%;
+    max-width: 1600px;
+    margin: 0 auto 36px;
+}
+
+.container h2 {
+    padding-inline: clamp(16px, 3vw, 40px);
+}
+
+.product {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: clamp(12px, 1.6vw, 24px);
+    padding: 18px clamp(16px, 3vw, 40px) 35px;
+}
+
+.product-card {
+    min-width: 0;
+    height: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: white;
+    box-shadow: 0 4px 18px rgba(23, 75, 42, 0.05);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1.15 / 1;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: #f2f7f1;
+}
+
+.image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image span {
+    max-width: calc(100% - 12px);
+}
+
+.product-card h3 {
+    overflow-wrap: anywhere;
+    line-height: 1.4;
+}
+
+.product-card p {
+    overflow-wrap: anywhere;
+}
+
+.product-card .btn {
+    width: 100%;
+    margin-top: auto;
+    padding: 10px 8px;
+    border-radius: 10px;
+}
+
+/* FOOTER */
+.footer {
+    gap: 28px;
+}
+
+.footer-table {
+    min-width: 0;
+}
+
+/* TABLETS AND SMALL LAPTOPS */
+@media (max-width: 1100px) {
     .navbar {
-        flex-wrap: wrap;
-        gap: 10px 15px;
-        padding: 12px 20px;
-    }
-
-    .navbar h1 {
-        font-size: 23px;
+        gap: 12px;
     }
 
     .navbar ul {
-        gap: 3px;
+        gap: 0;
     }
 
     .navbar a {
@@ -855,237 +962,160 @@ UPDATED: Consistent button styling in the navigation
         font-size: 13px;
     }
 
-    .search-box {
-        max-width: none;
-        flex-basis: 100%;
-        order: 3;
-    }
-
-    /* UPDATED: Keeps content clear of the taller navbar */
-    .hero {
-        width: calc(100% - 40px);
-        margin-top: 125px;
-        padding: 35px;
-        min-height: 270px;
-    }
-
-    .shop h1 {
-        font-size: 32px;
-    }
-
-    .cart-image {
-        font-size: 100px;
-    }
-
-    .catgory {
-        top: 120px;
-    }
-
     .product {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 18px;
-        padding: 15px 20px 30px;
     }
 
-    .container h2 {
-        padding-right: 20px;
-        padding-left: 20px;
-    }
-
-    .product-card {
-        padding: 13px;
-    }
-
-    .image {
-        height: 140px;
-    }
-
-    .footer {
-        justify-content: flex-start;
-        gap: 25px;
-    }
-
-    .footer-table {
-        flex: 1 1 180px;
+    .hero {
+        min-height: 260px;
     }
 }
 
-
-/* =========================================================
-   UPDATED: MOBILE PHONES
-   Purpose: Single-column navigation layout, touch-friendly
-   controls, readable hero text, and responsive product cards.
-   ========================================================= */
-
-@media (max-width: 550px) {
+/* MOBILE PHONES */
+@media (max-width: 650px) {
     html {
-        scroll-padding-top: 165px;
+        scroll-padding-top: 145px;
     }
 
     .navbar {
         display: grid;
-
         grid-template-columns: minmax(0, 1fr) auto;
         grid-template-areas:
             "logo navItems"
             "SearchBar SearchBar";
-
-        gap: 10px;
+        gap: 10px 8px;
+        padding: 10px 14px;
         min-height: 0;
-        height: auto;
-
-        padding: 12px 15px;
-
-        /* UPDATED: Avoids overlapping the page content */
-        align-items: center;
     }
 
     .navbar h1 {
         grid-area: logo;
         min-width: 0;
-
         margin: 0;
-        padding: 0;
-
-        font-size: 22px;
-        overflow-wrap: anywhere;
+        font-size: clamp(19px, 5vw, 23px);
     }
 
     .navbar ul {
         grid-area: navItems;
-
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        flex-wrap: wrap;
-        gap: 0;
-
-        margin: 0;
-        padding: 0;
+        gap: 2px;
+        min-width: 0;
     }
 
     .navbar li {
-        padding: 2px;
+        padding: 0;
     }
 
     .navbar a {
-        padding: 7px;
+        padding: 6px;
+        font-size: 11px;
+    }
+
+    .navbar button {
+        padding: 9px 10px;
         font-size: 12px;
     }
 
     .search-box {
         grid-area: SearchBar;
-        order: initial;
-
         width: 100%;
         max-width: none;
-        min-height: 42px;
+        min-height: 44px;
     }
 
     .search-box input {
-        font-size: 14px;
+        font-size: 16px;
     }
 
-    /* UPDATED: Hero dimensions fit narrow screens */
     .hero {
-        width: calc(100% - 30px);
-        min-height: 230px;
-
-        margin: 135px auto 22px;
-        padding: 24px 20px;
-
-        gap: 12px;
-        border-radius: 16px;
-    }
-
-    .shop {
-        flex: 1;
-        min-width: 0;
+        width: calc(100% - 24px);
+        margin: 132px auto 22px;
+        min-height: 215px;
+        gap: 8px;
+        padding: 22px 16px;
+        border-radius: 18px;
     }
 
     .shop h1 {
         margin-bottom: 10px;
-        font-size: 25px;
-        letter-spacing: -0.4px;
+        font-size: clamp(23px, 6vw, 30px);
+        letter-spacing: -0.5px;
     }
 
     .shop p {
-        margin-bottom: 17px;
-        font-size: 14px;
+        margin-bottom: 15px;
+        font-size: 13px;
         line-height: 1.65;
     }
 
     .shop button {
-        padding: 10px 15px;
+        min-height: 42px;
+        padding: 10px 14px;
         font-size: 13px;
     }
 
     .cart-image {
-        flex-shrink: 0;
-        font-size: clamp(50px, 15vw, 78px);
+        font-size: clamp(45px, 13vw, 72px);
     }
 
-    /* UPDATED: Category bar stays below the mobile navbar */
     .catgory {
-        top: 118px;
-        margin-top: 10px;
-        padding: 13px 0 8px;
+        top: 116px;
+        padding: 12px 0 7px;
     }
 
     .catgory h2 {
-        margin: 0 0 10px 18px;
-        font-size: 20px;
+        margin: 0 0 8px 15px;
+        font-size: 19px;
     }
 
     .category-row {
-        gap: 7px;
-        padding: 3px 15px 8px;
+        gap: 8px;
+        padding: 3px 14px 8px;
     }
 
     .item-con {
-        flex-basis: 75px;
-        width: 75px;
+        flex-basis: 72px;
+        width: 72px;
     }
 
     .item {
-        width: 62px;
-        height: 62px;
+        width: 58px;
+        height: 58px;
     }
 
     .item span {
-        font-size: 24px;
+        font-size: 23px;
     }
 
     .item-con p {
         font-size: 12px;
     }
 
-    /* UPDATED: Two columns on most phones */
     .container {
         margin-bottom: 20px;
     }
 
     .container h2 {
-        margin: 22px 0 14px;
-        padding: 0 16px;
-        font-size: 21px;
+        margin: 22px 0 8px;
+        padding-inline: 14px;
+        font-size: 20px;
     }
 
     .product {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 12px;
-
-        margin: 0;
-        padding: 12px 12px 25px;
+        padding: 12px 12px 24px;
     }
 
     .product-card {
-        padding: 10px;
-        border-radius: 12px;
+        padding: 9px;
+        border-radius: 13px;
     }
 
     .image {
-        height: 125px;
+        aspect-ratio: 1 / 0.92;
         border-radius: 9px;
     }
 
@@ -1098,6 +1128,7 @@ UPDATED: Consistent button styling in the navigation
 
     .product-card h3 {
         padding-top: 10px;
+        margin-bottom: 4px;
         font-size: 14px;
     }
 
@@ -1106,107 +1137,63 @@ UPDATED: Consistent button styling in the navigation
     }
 
     .product-card .btn {
-        min-height: 38px;
+        min-height: 40px;
         margin-top: 10px;
-        padding: 8px 6px;
+        padding: 8px 5px;
         font-size: 12px;
     }
 
     .footer {
-        gap: 20px;
         padding: 28px 18px 18px;
+        gap: 22px;
     }
 
     .footer-table {
         flex: 1 1 100%;
-        min-width: 0;
-        margin: 0;
-    }
-
-    .footer-table h3 {
-        margin-bottom: 8px;
-        font-size: 17px;
-    }
-
-    .footer-table li {
-        margin-bottom: 7px;
-    }
-
-    .footer-table a {
-        font-size: 13px;
     }
 
     .bottom {
         flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-
-        padding: 16px 5px 0;
-    }
-
-    .footer-bottom {
-        font-size: 12px;
-    }
-
-    .icons a {
-        width: 36px;
-        height: 36px;
-        margin: 5px;
+        gap: 12px;
     }
 }
 
-
-/* =========================================================
-   UPDATED: EXTRA-SMALL PHONES
-   Purpose: Prevent content from becoming cramped on narrow
-   devices while retaining the original website structure.
-   ========================================================= */
-
+/* VERY SMALL PHONES */
 @media (max-width: 360px) {
     .navbar {
-        padding: 10px;
+        padding-inline: 9px;
     }
 
     .navbar h1 {
-        font-size: 19px;
+        font-size: 18px;
     }
 
     .navbar a {
-        padding: 5px;
-        font-size: 11px;
+        padding: 4px;
+        font-size: 10px;
     }
 
     .hero {
-        width: calc(100% - 20px);
+        width: calc(100% - 16px);
         margin-top: 125px;
-        padding: 20px 13px;
+        padding: 17px 11px;
     }
 
     .shop h1 {
         font-size: 22px;
     }
 
-    .shop p {
-        font-size: 13px;
-    }
-
     .cart-image {
-        font-size: 48px;
+        font-size: 43px;
     }
 
     .product {
         gap: 9px;
-        padding-right: 9px;
-        padding-left: 9px;
+        padding-inline: 9px;
     }
 
     .product-card {
-        padding: 8px;
-    }
-
-    .image {
-        height: 105px;
+        padding: 7px;
     }
 
     .product-card h3 {
@@ -1218,6 +1205,27 @@ UPDATED: Consistent button styling in the navigation
     }
 }
 
+/* DESKTOP HOVER AND ACCESSIBILITY */
+@media (hover: hover) and (pointer: fine) {
+    .product-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-hover);
+    }
+
+    .product-card:hover .image img {
+        transform: scale(1.05);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
+    }
+}
 
 /* =========================================================
    UPDATED: REDUCED MOTION ACCESSIBILITY
@@ -1233,4 +1241,44 @@ UPDATED: Consistent button styling in the navigation
         animation-iteration-count: 1 !important;
         transition-duration: 0.01ms !important;
     }
+}
+
+
+
+
+/* ===== SEARCH MODE ===== */
+
+/* Hide hero and category sections while searching */
+body.search-mode .hero,
+body.search-mode .catgory,
+body.search-mode .category-row {
+    display: none !important;
+}
+
+/* Keep the navbar fixed and visible */
+body.search-mode .navbar {
+    display: flex !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10000;
+}
+
+/* Product section spacing below fixed navbar */
+body.search-mode .container {
+    display: block;
+    padding-top: 10px;
+}
+
+/* Show product cards in a responsive grid */
+body.search-mode .product {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+/* Hide products that don't match */
+.product-card.search-hidden {
+    display: none !important;
 }
